@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_disabled_button(browser):
     browser.get("https://konflic.github.io/examples/")
-    browser.maximize_window()
 
     # Сначала проверяем клик по задизейбленой кнопке
     dis_btn = browser.find_element(value="disabled")
@@ -25,8 +24,6 @@ def test_disabled_button(browser):
     time.sleep(1)  # Для демонстрации
 
     dis_btn.click()
-
-    time.sleep(1)  # Для демонстрации
 
     # Проверяем что видна модалка
     WebDriverWait(browser, 3).until(EC.visibility_of(browser.find_element(value="myModal")))
